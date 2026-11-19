@@ -137,7 +137,7 @@
     for (var i = 0; i < nodes.length; i++) {
       var n = nodes[i];
       var cls = (n.className.match(/b-\w+/) || ['b-ideas'])[0];
-      var obra = n.querySelector('.obra').textContent.replace(/^\s*En la obra:\s*/, '');
+      var obra = n.querySelector('.obra').textContent.replace(/^\s*[^:]{1,25}:\s*/, '');
       cards.push({
         term: n.querySelector('h4').textContent,
         def: n.querySelector('.def').textContent,
@@ -147,6 +147,7 @@
         cls: cls
       });
     }
+    var label = root.getAttribute('data-label') || 'En la obra:';
     var view = cards.slice(), idx = 0, face = 'front', busy = false;
 
     root.innerHTML =
@@ -170,7 +171,7 @@
         card.innerHTML = c.icon + '<span class="deck-term">' + esc(c.term) + '</span><span class="deck-hint">Pulsa para ver la definición</span>';
       } else {
         card.innerHTML = '<span class="deck-term small">' + esc(c.term) + '</span><span class="deck-def">' + esc(c.def) +
-          '</span><span class="deck-obra"><strong>En la obra:</strong> ' + esc(c.obra) + '</span>';
+          '</span><span class="deck-obra"><strong>' + esc(label) + '</strong> ' + esc(c.obra) + '</span>';
       }
       card.setAttribute('aria-label', (face === 'front' ? 'Término: ' : 'Definición de ') + c.term + '. Pulsa para dar la vuelta.');
       count.textContent = (idx + 1) + ' / ' + view.length;

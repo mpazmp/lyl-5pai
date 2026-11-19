@@ -15,3 +15,10 @@ Sitio estático (HTML + CSS + un poco de JavaScript): no necesita servidor ni ba
 
 ## Cambiar los colores
 En lo alto de `css/style.css` están las variables (`--navy`, `--orange`, `--orange-d`…). El naranja de texto (`--orange-d`) es más oscuro a propósito, para que se lea bien sobre blanco.
+
+## Unidad «Un hecho, muchas voces» (carpeta `periodismo/`)
+Textos periodísticos, blogs y redes sociales en tiempo de elecciones. Usa la misma hoja de estilos y el mismo JavaScript que el resto del sitio, más `periodismo/periodismo.css`.
+- Páginas: `index`, `noticia`, `sesgo`, `resultados`, `opinion`, `redes`, `bulos`, `taller`, `evaluacion`, `glosario`, `cierre` y `recursos`.
+- `periodismo/descargas/Fichas_libreta_Un_hecho_muchas_voces_5PAI.docx`: fichas para imprimir y pegar en la libreta.
+- En esta unidad no hay campos de respuesta: todas las tareas se hacen en la libreta.
+- Se enlaza desde la página de inicio del sitio (apartado «Otras unidades»).
